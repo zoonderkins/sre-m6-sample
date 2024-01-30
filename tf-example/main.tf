@@ -12,8 +12,8 @@ provider "aws" {
   region  = "us-east-2"
 }
 
-resource "aws_s3_bucket" "sre-m6-test-qoiwueropasdc" {
-    bucket = "sre-m6-bucket-1234567890"
+resource "aws_s3_bucket" "sre-m6-oidc-bucket-asdf" {
+    bucket = "sre-m6-test-qoiwueropasdc"
     acl    = "private"
     tags = {
         Name = "sre-m6-oidc-bucket-asdf"
