@@ -32,7 +32,8 @@ jobs:
       - name: Copy files to the test website with the AWS CLI
         run: |
           echo "Copy files to the test website with the AWS CLI"
-          echo "test" > test.txt
+          echo "test" > $DIR/test.txt
+          ls -lah
           DIR="$(pwd)"
           echo "DIR: $DIR"
-          aws s3 copy $DIR/test.txt s3://cf-templates-v2yni93dm3ki-us-west-2
+          aws s3 cp $DIR/test.txt s3://cf-templates-v2yni93dm3ki-us-west-2
