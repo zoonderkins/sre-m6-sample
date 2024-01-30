@@ -1,6 +1,7 @@
 name: 6-1Hello-World
 
-on: [push]
+on: [pull_request]
+#one: [push]
 
 jobs:
   hello:
