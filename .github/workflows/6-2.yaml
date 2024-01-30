@@ -1,8 +1,8 @@
-name: 6-2-CI-lint-test
+name: 6-2-oidc
 
 on:
   push:
-    branches: [master]
+    branches: [masterrrr]
   pull_request:
     branches: [main]
 

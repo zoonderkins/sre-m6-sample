@@ -1,0 +1,31 @@
+name: 6-2-1-oidc-terraform
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+      - name: Terraform Apply
+        id: apply
+        # env:
+        # TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
+        run: |
+          cd tf-example/
+          terraform init
+          terraform validate
+          terraform plan 
+          terraform apply -auto-approve
