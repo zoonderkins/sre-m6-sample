@@ -33,4 +33,4 @@ jobs:
         run: |
           echo "Copy files to the test website with the AWS CLI"
           echo "test" > test.txt
-          aws s3 sync test.txt s3://cf-templates-v2yni93dm3ki-us-west-2
+          aws s3 sync ./test.txt s3://cf-templates-v2yni93dm3ki-us-west-2
