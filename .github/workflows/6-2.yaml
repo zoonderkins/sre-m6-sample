@@ -2,7 +2,7 @@ name: 6-2-CI-lint-test
 
 on:
   push:
-    branches: [dev, master]
+    branches: [master]
   pull_request:
     branches: [main]
 
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [20]
 
     steps:
       - uses: actions/checkout@v4
@@ -19,10 +19,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Lint
-        uses: azohra/shell-linter@latest
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          path: "setup.sh,scripts"
-
-      - name: Run tests
-        run: echo "Run tests"
+          role-to-assume: arn:aws:iam::670483336223:role/sre-m6-sample-oidc-Role-gwv8ikPuoSBb
+          aws-region: us-west-2
+      - name: Copy files to the test website with the AWS CLI
+        run: |
+          echo "Copy files to the test website with the AWS CLI"
+          echo "test" > test.txt
+          aws s3 sync test.txt s3://cf-templates-v2yni93dm3ki-us-west-2
