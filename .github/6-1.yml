@@ -1,0 +1,13 @@
+name: Hello World Pipeline
+
+on: [push]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Hello stage
+        run: echo "hello world"
