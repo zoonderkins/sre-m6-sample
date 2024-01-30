@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "sre-m6-oidc-bucket-asdf" {
-    bucket = "sre-m6-test-qoiwueropasdc"
+    bucket = "sre-m6-test-bbbb"
     acl    = "private"
     tags = {
         Name = "sre-m6-oidc-bucket-asdf"
