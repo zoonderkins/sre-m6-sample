@@ -1,0 +1,12 @@
+name: 6-1Hello-World
+
+on: ""
+
+jobs:
+  ??:
+    runs-on: mac?
+    steps:
+      - name: clone repository??
+
+      - name: Hello
+        run: print "hello world"
