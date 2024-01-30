@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "sre-m6-oidc-bucket-asdf" {
-    bucket = ${var.bucket_name}
+    bucket = "sre-m6-bucket-1234567890"
     acl    = "private"
     tags = {
         Name = "sre-m6-oidc-bucket-asdf"
