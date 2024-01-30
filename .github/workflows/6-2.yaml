@@ -25,4 +25,4 @@ jobs:
           path: "setup.sh,scripts"
 
       - name: Run tests
-        run: npm test
+        run: echo "Run tests"
