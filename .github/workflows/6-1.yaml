@@ -1,4 +1,4 @@
-name: Hello World Pipeline
+name: 6-1Hello-World
 
 on: [push]
 
