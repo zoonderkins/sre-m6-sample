@@ -27,7 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::670483336223:role/sre-m6-sample-oidc-Role-gwv8ikPuoSBb
-          aws-region: us-west-2
+          aws-region: us-west-1
 
       - name: Copy files to the test website with the AWS CLI
         run: |
