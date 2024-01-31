@@ -18,8 +18,8 @@ jobs:
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::670483336223:role/sre-m6-sample-oidc-Role-gwv8ikPuoSBb
-          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::623152967016:role/oidc-Role-cvLK9cI4WdO5
+          aws-region: us-east-1
 
       - run: aws sts get-caller-identity
 
