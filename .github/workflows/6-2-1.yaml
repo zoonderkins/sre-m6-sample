@@ -42,5 +42,12 @@ jobs:
 
       - name: Terraform Plan
         run: cd tf-example/ && terraform plan -input=false
+
       - name: Terraform apply
         run: cd tf-example/ && terraform apply -auto-approve
+
+      - name: Sleep for 3 minute
+        run: sleep 180
+
+      - name: Terraform Destroy
+        run: cd tf-example/ && terraform destroy -auto-approve
