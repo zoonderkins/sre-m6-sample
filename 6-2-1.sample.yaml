@@ -21,6 +21,8 @@ jobs:
           role-to-assume: arn:aws:iam::670483336223:role/sre-m6-sample-oidc-Role-gwv8ikPuoSBb
           aws-region: us-west-2
 
+      - run: aws sts get-caller-identity
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
