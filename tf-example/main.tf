@@ -7,7 +7,6 @@ terraform {
   }
 }
 
-
 variable "region" {
   type = string
 }
@@ -17,9 +16,9 @@ variable "role_arn" {
 }
 
 provider "aws" {
-  region  = var.region
+  region  = "us-east-1"
   assume_role {
-    role_arn = var.role_arn
+    role_arn = "arn:aws:iam::623152967016:role/oidc-Role-cvLK9cI4WdO5"
   }
 }
 
