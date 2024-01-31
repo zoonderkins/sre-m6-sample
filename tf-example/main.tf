@@ -10,7 +10,7 @@ terraform {
 provider "aws" {
   region  = "us-east-1"
   assume_role {
-    role_arn = "arn:aws:iam::623152967016:role/oidc-Role-cvLK9cI4WdO5"
+    role_arn = "arn:aws:sts::623152967016:assumed-role/oidc-Role-cvLK9cI4WdO5/GitHubActions"
   }
 }
 
