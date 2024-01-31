@@ -42,3 +42,5 @@ jobs:
 
       - name: Terraform Plan
         run: cd tf-example/ && terraform plan -input=false
+      - name: Terraform apply
+        run: cd tf-example/ && terraform apply -auto-approve
