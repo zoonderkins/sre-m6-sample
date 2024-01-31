@@ -23,8 +23,6 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_wrapper: false
 
       - name: run sts
         run: |
@@ -35,10 +33,12 @@ jobs:
         # env:
         # TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
         run: |
-          TF_VAR_role_arn="arn:aws:iam::623152967016:role/oidc-Role-cvLK9cI4WdO5"
-          TF_VAR_region="us-east-1"
           cd tf-example/
-          terraform init
-          terraform validate
-          terraform plan 
-          terraform apply -auto-approve
+      - name: Terraform Init
+        run: cd tf-example/ && terraform init
+
+      - name: Terraform Format
+        run: cd tf-example/ && terraform fmt -check
+
+      - name: Terraform Plan
+        run: cd tf-example/ && terraform plan -input=false
