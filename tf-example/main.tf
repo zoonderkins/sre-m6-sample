@@ -7,10 +7,19 @@ terraform {
   }
 }
 
+
+variable "region" {
+  type = string
+}
+
+variable "role_arn" {
+  type = string
+}
+
 provider "aws" {
-  region  = ${var.region}
+  region  = var.region
   assume_role {
-    role_arn = ${var.role_arn}
+    role_arn = var.role_arn
   }
 }
 
